@@ -1,6 +1,5 @@
-package com.vmazur.datastructures.arraylist;
+package com.vmazur.datastructures.list;
 
-import com.vmazur.datastrustures.arraylist.ArrayList;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,8 +13,9 @@ public class ArrayListTest {
         arrayList.add("A");
         arrayList.add("B");
         arrayList.add("C");
-        assertEquals("B", arrayList.get(arrayList.size() - 2));
-        assertEquals("C", arrayList.get(arrayList.size() - 1));
+        assertEquals("A", arrayList.get(0));
+        assertEquals("B", arrayList.get(1));
+        assertEquals("C", arrayList.get(2));
     }
     @Test
     @DisplayName("Insert value by index with additional shift of the list elements to the right")
@@ -92,7 +92,7 @@ public class ArrayListTest {
         arrayList.add("C");
         arrayList.add("C");
         assertEquals(2, arrayList.indexOf("C"));
-        assertEquals(0, arrayList.indexOf("D"));
+        assertEquals(-1, arrayList.indexOf("D"));
     }
     @Test
     @DisplayName("Get index of the value last occurrence in the list")
@@ -103,7 +103,7 @@ public class ArrayListTest {
         arrayList.add("C");
         arrayList.add("C");
         assertEquals(3, arrayList.lastIndexOf("C"));
-        assertEquals(0, arrayList.lastIndexOf("D"));
+        assertEquals(-1, arrayList.lastIndexOf("D"));
     }
     @Test
     @DisplayName("Printing info about the list")
